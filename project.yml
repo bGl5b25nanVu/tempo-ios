@@ -5,6 +5,11 @@ options:
     iOS: "17.0"
   xcodeVersion: "15.0"
 
+packages:
+  GoogleSignIn:
+    url: https://github.com/google/GoogleSignIn-iOS
+    from: "7.0.0"
+
 targets:
   Tempo:
     type: application
@@ -12,6 +17,9 @@ targets:
     sources:
       - path: App
       - path: Features
+    dependencies:
+      - package: GoogleSignIn
+        product: GoogleSignIn
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.tempo.app
@@ -24,6 +32,23 @@ targets:
         CURRENT_PROJECT_VERSION: 1
         SWIFT_VERSION: 5.9
         GENERATE_INFOPLIST_FILE: YES
+        CODE_SIGN_IDENTITY: ""
+        CODE_SIGNING_REQUIRED: NO
+        CODE_SIGNING_ALLOWED: NO
+
+  TempoTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: TempoTests
+    dependencies:
+      - target: Tempo
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.tempo.app.tests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Tempo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tempo"
+        BUNDLE_LOADER: "$(TEST_HOST)"
         CODE_SIGN_IDENTITY: ""
         CODE_SIGNING_REQUIRED: NO
         CODE_SIGNING_ALLOWED: NO
