@@ -17,6 +17,8 @@
 		7B3A92608F3FF118D2306D5A /* KeychainHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA04619AFEFCFAEEDEFDA81 /* KeychainHelperTests.swift */; };
 		A0BBFD2DF4D639D29E469171 /* TempoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3FAAF6EEE4281DFB05494F /* TempoApp.swift */; };
 		E2DDC705B327E579DFAF6EF7 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51DD785A26B47DFD9162068 /* CalendarView.swift */; };
+		E50154B2D5CB5399CED3736C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 94347303F2D1857CA7A1832C /* README.md */; };
+		FD8CC0C036C886F22D08E3A5 /* LocalMockCalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26CA6BF4285CB04CAFC7665 /* LocalMockCalendarService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +38,12 @@
 		59C0F9CD71A0E904D65E193B /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		68349F0B540061246800E555 /* GoogleCalendarAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCalendarAuth.swift; sourceTree = "<group>"; };
 		71EA93F9A0D6845F111030FA /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		94347303F2D1857CA7A1832C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A588FBF105831FB78AB8EDE1 /* MockCalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCalendarService.swift; sourceTree = "<group>"; };
 		AE6263597B3354C508BBC7D4 /* Tempo.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Tempo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4541DB43EE8ECD6E2F83DBD /* GoogleCalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCalendarService.swift; sourceTree = "<group>"; };
 		B51DD785A26B47DFD9162068 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		D26CA6BF4285CB04CAFC7665 /* LocalMockCalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMockCalendarService.swift; sourceTree = "<group>"; };
 		D57F97E834A8A30DB9CAE89B /* TempoTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = TempoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -60,6 +64,7 @@
 			children = (
 				68349F0B540061246800E555 /* GoogleCalendarAuth.swift */,
 				59C0F9CD71A0E904D65E193B /* KeychainHelper.swift */,
+				94347303F2D1857CA7A1832C /* README.md */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -93,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				4EA04619AFEFCFAEEDEFDA81 /* KeychainHelperTests.swift */,
+				D26CA6BF4285CB04CAFC7665 /* LocalMockCalendarService.swift */,
 				A588FBF105831FB78AB8EDE1 /* MockCalendarService.swift */,
 			);
 			path = TempoTests;
@@ -136,6 +142,7 @@
 			buildConfigurationList = 4FE7A9862C48352D13895373 /* Build configuration list for PBXNativeTarget "Tempo" */;
 			buildPhases = (
 				F8BECD3B83F1BDE402E1832A /* Sources */,
+				99E67F85FA1E5FB50DAA3ABA /* Resources */,
 				01D67FA7CD498405BE72BD2D /* Frameworks */,
 			);
 			buildRules = (
@@ -198,12 +205,24 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		99E67F85FA1E5FB50DAA3ABA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E50154B2D5CB5399CED3736C /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2FA10C5E5FAA1BCAD0D7DAE4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7B3A92608F3FF118D2306D5A /* KeychainHelperTests.swift in Sources */,
+				FD8CC0C036C886F22D08E3A5 /* LocalMockCalendarService.swift in Sources */,
 				0457789FD3CFD686F3713E91 /* MockCalendarService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,8 +260,7 @@
 				CODE_SIGNING_REQUIRED = NO;
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_GENERATION_MODE = GeneratedFile;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,7 +322,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -386,7 +404,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -406,8 +424,7 @@
 				CODE_SIGNING_REQUIRED = NO;
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_GENERATION_MODE = GeneratedFile;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
