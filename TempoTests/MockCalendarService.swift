@@ -12,6 +12,9 @@ final class MockCalendarService: CalendarService {
         id: "mock-1", title: "Test Event", startDate: Date(), endDate: Date(), calendarId: "primary"
     ))
     var deleteEventResult: Result<Void, Error> = .success(())
+    var patchEventResult: Result<CalendarEvent, Error> = .success(CalendarEvent(
+        id: "mock-patched", title: "Patched Event", startDate: Date(), endDate: Date(), calendarId: "primary"
+    ))
 
     func fetchCalendars() async throws -> [CalendarListItem] {
         try fetchCalendarsResult.get()
@@ -27,6 +30,10 @@ final class MockCalendarService: CalendarService {
 
     func deleteEvent(id: String, calendarId: String) async throws {
         try deleteEventResult.get()
+    }
+
+    func patchEvent(_ update: CalendarEventUpdate, calendarId: String) async throws -> CalendarEvent {
+        try patchEventResult.get()
     }
 }
 
@@ -73,6 +80,26 @@ final class CalendarServiceTests: XCTestCase {
     func testMockDeleteEventSuccess() async throws {
         let mock = MockCalendarService()
         try await mock.deleteEvent(id: "e1", calendarId: "primary")
+    }
+
+    func testMockPatchEventSuccess() async throws {
+        let mock = MockCalendarService()
+        let update = CalendarEventUpdate(id: "e1", title: "Updated Title")
+        let result = try await mock.patchEvent(update, calendarId: "primary")
+        XCTAssertEqual(result.title, "Patched Event") // From mock default
+    }
+
+    func testMockPatchEventFailure() async throws {
+        let mock = MockCalendarService()
+        mock.patchEventResult = .failure(CalendarServiceError.eventNotFound)
+        let update = CalendarEventUpdate(id: "nonexistent")
+        do {
+            _ = try await mock.patchEvent(update, calendarId: "primary")
+            XCTFail("Expected error")
+        } catch let error as CalendarServiceError {
+            if case .eventNotFound = error { } // Expected
+            else { XCTFail("Wrong error type: \(error)") }
+        }
     }
 
     func testMockFetchCalendarsFailure() async throws {

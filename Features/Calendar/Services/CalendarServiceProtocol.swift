@@ -66,6 +66,28 @@ protocol CalendarService: AnyObject {
     /// Deletes an event by ID.
     func deleteEvent(id: String, calendarId: String) async throws
 
+    /// Patches (partially updates) an existing event.
+    /// Only non-nil fields in `update` are applied.
+    func patchEvent(_ update: CalendarEventUpdate, calendarId: String) async throws -> CalendarEvent
+
     /// Whether the service is currently authenticated.
     var isAuthenticated: Bool { get }
+}
+
+// MARK: - Event Update Payload
+
+/// Fields that can be optionally updated on an existing event.
+/// All fields are optional — only provided values are sent to the API.
+struct CalendarEventUpdate: Codable, Equatable {
+    var id: String
+    var title: String?
+    var startDate: Date?
+    var endDate: Date?
+
+    init(id: String, title: String? = nil, startDate: Date? = nil, endDate: Date? = nil) {
+        self.id = id
+        self.title = title
+        self.startDate = startDate
+        self.endDate = endDate
+    }
 }

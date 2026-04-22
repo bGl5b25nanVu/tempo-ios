@@ -165,7 +165,7 @@ final class GoogleCalendarService: CalendarService {
 
     func createEvent(title: String, startDate: Date, endDate: Date, calendarId: String) async throws -> CalendarEvent {
         let isoFormatter = ISO8601DateFormatter()
-        isoFormatter.formatOptions = [.withInternetDateTime, .withTimeZoneDetail]
+        isoFormatter.formatOptions = [.withInternetDateTime]
 
         let eventBody: [String: Any] = [
             "summary": title,
@@ -206,6 +206,69 @@ final class GoogleCalendarService: CalendarService {
         _ = try await makeRequest(
             path: "/calendars/\(calendarId)/events/\(id)",
             method: "DELETE"
+        )
+    }
+
+    func patchEvent(_ update: CalendarEventUpdate, calendarId: String) async throws -> CalendarEvent {
+        let isoFormatter = ISO8601DateFormatter()
+        isoFormatter.formatOptions = [.withInternetDateTime]
+
+        var bodyDict: [String: Any] = [:]
+        if let title = update.title {
+            bodyDict["summary"] = title
+        }
+        if let startDate = update.startDate {
+            bodyDict["start"] = [
+                "dateTime": isoFormatter.string(from: startDate),
+                "timeZone": TimeZone.current.identifier
+            ]
+        }
+        if let endDate = update.endDate {
+            bodyDict["end"] = [
+                "dateTime": isoFormatter.string(from: endDate),
+                "timeZone": TimeZone.current.identifier
+            ]
+        }
+
+        let bodyData = try JSONSerialization.data(withJSONObject: bodyDict)
+
+        // The event ID is encoded in the update payload
+        guard let eventId = update.id else {
+            throw CalendarServiceError.eventNotFound
+        }
+
+        let data = try await makeRequest(
+            path: "/calendars/\(calendarId)/events/\(eventId)",
+            queryItems: [URLQueryItem(name: "fields", value: "id,summary,start,end")],
+            method: "PATCH",
+            body: bodyData
+        )
+
+        struct PatchResponse: Decodable {
+            let id: String
+            let summary: String?
+            let start: EventDateTime?
+            let end: EventDateTime?
+        }
+        struct EventDateTime: Decodable {
+            let dateTime: String?
+            let date: String?
+            let timeZone: String?
+        }
+
+        let entry = try JSONDecoder().decode(PatchResponse.self, from: data)
+
+        let startStr = entry.start?.dateTime ?? entry.start?.date
+        let endStr = entry.end?.dateTime ?? entry.end?.date
+        let startDate = startStr.flatMap { isoFormatter.date(from: $0) } ?? Date()
+        let endDate = endStr.flatMap { isoFormatter.date(from: $0) } ?? Date()
+
+        return CalendarEvent(
+            id: entry.id,
+            title: entry.summary ?? update.title ?? "",
+            startDate: startDate,
+            endDate: endDate,
+            calendarId: calendarId
         )
     }
 }

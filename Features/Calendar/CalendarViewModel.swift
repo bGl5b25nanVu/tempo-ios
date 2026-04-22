@@ -64,6 +64,69 @@ final class CalendarViewModel: ObservableObject {
         }
     }
 
+    // MARK: - Event CRUD
+
+    /// Creates a new event on the selected calendar.
+    func createEvent(title: String, startDate: Date, endDate: Date) async {
+        guard calendarService.isAuthenticated else {
+            errorMessage = "Not signed in."
+            return
+        }
+        isLoading = true
+        errorMessage = nil
+        do {
+            let newEvent = try await calendarService.createEvent(
+                title: title,
+                startDate: startDate,
+                endDate: endDate,
+                calendarId: selectedCalendarId
+            )
+            events.append(newEvent)
+            events.sort { $0.startDate < $1.startDate }
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+        isLoading = false
+    }
+
+    /// Updates an existing event (title and/or dates).
+    func updateEvent(id: String, title: String?, startDate: Date?, endDate: Date?) async {
+        guard calendarService.isAuthenticated else {
+            errorMessage = "Not signed in."
+            return
+        }
+        isLoading = true
+        errorMessage = nil
+        do {
+            let update = CalendarEventUpdate(id: id, title: title, startDate: startDate, endDate: endDate)
+            let patched = try await calendarService.patchEvent(update, calendarId: selectedCalendarId)
+            if let idx = events.firstIndex(where: { $0.id == id }) {
+                events[idx] = patched
+            }
+            events.sort { $0.startDate < $1.startDate }
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+        isLoading = false
+    }
+
+    /// Deletes an event by ID.
+    func deleteEvent(id: String) async {
+        guard calendarService.isAuthenticated else {
+            errorMessage = "Not signed in."
+            return
+        }
+        isLoading = true
+        errorMessage = nil
+        do {
+            try await calendarService.deleteEvent(id: id, calendarId: selectedCalendarId)
+            events.removeAll { $0.id == id }
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+        isLoading = false
+    }
+
     // MARK: - Auth
 
     func signIn(anchor: ASPresentationAnchor) async {
