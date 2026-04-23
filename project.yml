@@ -17,6 +17,7 @@ targets:
     sources:
       - path: App
       - path: Features
+      - path: Store
     dependencies:
       - package: GoogleSignIn
         product: GoogleSignIn
