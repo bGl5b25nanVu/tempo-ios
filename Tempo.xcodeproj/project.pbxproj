@@ -7,17 +7,68 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0457789FD3CFD686F3713E91 /* MockCalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A588FBF105831FB78AB8EDE1 /* MockCalendarService.swift */; };
+		294D7C9C37B61E5D3FA461F8 /* TransactionListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF123AD0952BE01A6379B2 /* TransactionListener.swift */; };
+		4C3624309BEDFA2D7F6E2FCF /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 9B720F2FE247802DD0D79F34 /* GoogleSignIn */; };
+		6E74CE1BA25E61E5DE0E226B /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B11A6D4AD8CDCC66B3CCF /* PaywallView.swift */; };
+		7B3A92608F3FF118D2306D5A /* KeychainHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA04619AFEFCFAEEDEFDA81 /* KeychainHelperTests.swift */; };
+		929FA8D573B9E59D8201B46A /* ProductStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A992197F4FDFAC83538BEC /* ProductStore.swift */; };
+		9A1FD90248971860A8288866 /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = 91AE8C9197F002994E1949B0 /* Products.json */; };
 		A0BBFD2DF4D639D29E469171 /* TempoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3FAAF6EEE4281DFB05494F /* TempoApp.swift */; };
+		C94F60472F8DC4A1D49F3428 /* PurchaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF68404B8DB472026CB7D63 /* PurchaseButton.swift */; };
+		CC07CD246B4EA871AECA0A96 /* RestoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EC4825BB4D896DA05BDF64 /* RestoreButton.swift */; };
 		E2DDC705B327E579DFAF6EF7 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51DD785A26B47DFD9162068 /* CalendarView.swift */; };
+		FD8CC0C036C886F22D08E3A5 /* LocalMockCalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26CA6BF4285CB04CAFC7665 /* LocalMockCalendarService.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5686D52CB9B7A408A45BB569 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD30179AB18F679D26066274 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4B1ABCA42D941961C207402;
+			remoteInfo = Tempo;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		40EC4825BB4D896DA05BDF64 /* RestoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreButton.swift; sourceTree = "<group>"; };
 		4C3FAAF6EEE4281DFB05494F /* TempoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoApp.swift; sourceTree = "<group>"; };
+		4EA04619AFEFCFAEEDEFDA81 /* KeychainHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelperTests.swift; sourceTree = "<group>"; };
+		75A992197F4FDFAC83538BEC /* ProductStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductStore.swift; sourceTree = "<group>"; };
+		87FF123AD0952BE01A6379B2 /* TransactionListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListener.swift; sourceTree = "<group>"; };
+		91AE8C9197F002994E1949B0 /* Products.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Products.json; sourceTree = "<group>"; };
+		A588FBF105831FB78AB8EDE1 /* MockCalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCalendarService.swift; sourceTree = "<group>"; };
+		ADF68404B8DB472026CB7D63 /* PurchaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseButton.swift; sourceTree = "<group>"; };
 		AE6263597B3354C508BBC7D4 /* Tempo.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Tempo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B51DD785A26B47DFD9162068 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		D26CA6BF4285CB04CAFC7665 /* LocalMockCalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMockCalendarService.swift; sourceTree = "<group>"; };
+		D57F97E834A8A30DB9CAE89B /* TempoTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = TempoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E46B11A6D4AD8CDCC66B3CCF /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFrameworksBuildPhase section */
+		01D67FA7CD498405BE72BD2D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C3624309BEDFA2D7F6E2FCF /* GoogleSignIn in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
+		351E0C9245C93683FAA8BCB1 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				91AE8C9197F002994E1949B0 /* Products.json */,
+				75A992197F4FDFAC83538BEC /* ProductStore.swift */,
+				87FF123AD0952BE01A6379B2 /* TransactionListener.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
 		3FA25A73B8353769DBDA00C8 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -30,16 +81,44 @@
 			isa = PBXGroup;
 			children = (
 				70FC7CDEE91C337024B93FA8 /* Calendar */,
+				5DCA83BEECFACA62010236CC /* Subscription */,
 			);
 			path = Features;
+			sourceTree = "<group>";
+		};
+		4F6CAF7BB3175FE0BD6C6EF6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EBE25499AE391107318CD981 /* Subscription */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		551138FD8DA4B1DC4CE1CC90 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				AE6263597B3354C508BBC7D4 /* Tempo.app */,
+				D57F97E834A8A30DB9CAE89B /* TempoTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		5ABE29F9C60E86484C7813E7 /* TempoTests */ = {
+			isa = PBXGroup;
+			children = (
+				4EA04619AFEFCFAEEDEFDA81 /* KeychainHelperTests.swift */,
+				D26CA6BF4285CB04CAFC7665 /* LocalMockCalendarService.swift */,
+				A588FBF105831FB78AB8EDE1 /* MockCalendarService.swift */,
+			);
+			path = TempoTests;
+			sourceTree = "<group>";
+		};
+		5DCA83BEECFACA62010236CC /* Subscription */ = {
+			isa = PBXGroup;
+			children = (
+				4F6CAF7BB3175FE0BD6C6EF6 /* Views */,
+			);
+			path = Subscription;
 			sourceTree = "<group>";
 		};
 		70FC7CDEE91C337024B93FA8 /* Calendar */ = {
@@ -55,8 +134,20 @@
 			children = (
 				3FA25A73B8353769DBDA00C8 /* App */,
 				4B0D3764E3F1D906FC8D75BC /* Features */,
+				351E0C9245C93683FAA8BCB1 /* Store */,
+				5ABE29F9C60E86484C7813E7 /* TempoTests */,
 				551138FD8DA4B1DC4CE1CC90 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		EBE25499AE391107318CD981 /* Subscription */ = {
+			isa = PBXGroup;
+			children = (
+				E46B11A6D4AD8CDCC66B3CCF /* PaywallView.swift */,
+				ADF68404B8DB472026CB7D63 /* PurchaseButton.swift */,
+				40EC4825BB4D896DA05BDF64 /* RestoreButton.swift */,
+			);
+			path = Subscription;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -67,15 +158,36 @@
 			buildConfigurationList = 4FE7A9862C48352D13895373 /* Build configuration list for PBXNativeTarget "Tempo" */;
 			buildPhases = (
 				F8BECD3B83F1BDE402E1832A /* Sources */,
+				99E67F85FA1E5FB50DAA3ABA /* Resources */,
+				01D67FA7CD498405BE72BD2D /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Tempo;
+			packageProductDependencies = (
+				9B720F2FE247802DD0D79F34 /* GoogleSignIn */,
+			);
 			productName = Tempo;
 			productReference = AE6263597B3354C508BBC7D4 /* Tempo.app */;
 			productType = "com.apple.product-type.application";
+		};
+		C337B61AC76E84E27EF729D6 /* TempoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68B3E3DE0818150843E75C44 /* Build configuration list for PBXNativeTarget "TempoTests" */;
+			buildPhases = (
+				2FA10C5E5FAA1BCAD0D7DAE4 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A8CC82F224EE8C8583190147 /* PBXTargetDependency */,
+			);
+			name = TempoTests;
+			productName = TempoTests;
+			productReference = D57F97E834A8A30DB9CAE89B /* TempoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -97,25 +209,63 @@
 				en,
 			);
 			mainGroup = 93935E517C8A0946CFCF7B9D;
+			packageReferences = (
+				72008655C0CB12B2F8259835 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				B4B1ABCA42D941961C207402 /* Tempo */,
+				C337B61AC76E84E27EF729D6 /* TempoTests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		99E67F85FA1E5FB50DAA3ABA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A1FD90248971860A8288866 /* Products.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		2FA10C5E5FAA1BCAD0D7DAE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B3A92608F3FF118D2306D5A /* KeychainHelperTests.swift in Sources */,
+				FD8CC0C036C886F22D08E3A5 /* LocalMockCalendarService.swift in Sources */,
+				0457789FD3CFD686F3713E91 /* MockCalendarService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F8BECD3B83F1BDE402E1832A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E2DDC705B327E579DFAF6EF7 /* CalendarView.swift in Sources */,
+				6E74CE1BA25E61E5DE0E226B /* PaywallView.swift in Sources */,
+				929FA8D573B9E59D8201B46A /* ProductStore.swift in Sources */,
+				C94F60472F8DC4A1D49F3428 /* PurchaseButton.swift in Sources */,
+				CC07CD246B4EA871AECA0A96 /* RestoreButton.swift in Sources */,
 				A0BBFD2DF4D639D29E469171 /* TempoApp.swift in Sources */,
+				294D7C9C37B61E5D3FA461F8 /* TransactionListener.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A8CC82F224EE8C8583190147 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4B1ABCA42D941961C207402 /* Tempo */;
+			targetProxy = 5686D52CB9B7A408A45BB569 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		2F94FC066E934C1EDF0C22F7 /* Release */ = {
@@ -130,7 +280,6 @@
 				INFOPLIST_GENERATION_MODE = GeneratedFile;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -199,6 +348,26 @@
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
+		};
+		84B60CC7AAE0C71B27EACE2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tempo.app.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tempo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tempo";
+			};
+			name = Debug;
 		};
 		A43E8332B4882646B3660D8E /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -275,7 +444,6 @@
 				INFOPLIST_GENERATION_MODE = GeneratedFile;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -289,6 +457,26 @@
 			};
 			name = Debug;
 		};
+		CAF8959E515D8230B945CAB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tempo.app.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tempo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tempo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -297,6 +485,15 @@
 			buildConfigurations = (
 				C4BB3300C35869F601FE5EED /* Debug */,
 				2F94FC066E934C1EDF0C22F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		68B3E3DE0818150843E75C44 /* Build configuration list for PBXNativeTarget "TempoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84B60CC7AAE0C71B27EACE2F /* Debug */,
+				CAF8959E515D8230B945CAB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -311,6 +508,25 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		72008655C0CB12B2F8259835 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9B720F2FE247802DD0D79F34 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 72008655C0CB12B2F8259835 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AD30179AB18F679D26066274 /* Project object */;
 }
